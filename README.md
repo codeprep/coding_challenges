@@ -11,7 +11,7 @@ during your job interview.
 ## Table of Contents
 
 1. [Requirements](#requirements)
-1. [Installation Instruction](#installation_instructions)
+1. [Installation Instructions](#installation_instructions)
 1. [Writing Your Solution] (#writing_your_solution)
 1. [Testing Your Code] (#testing_your_code)
 1. [Contributing](#contributing)
@@ -45,7 +45,7 @@ testing your code.
 
 
 ## Contributing
-See CONTRIBUTING.md for contribution guidelines
+See [CONTRIBUTING.md] (CONTRIBUTING.md) for contribution guidelines
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/codeprep/coding_challenges
