@@ -11,7 +11,7 @@ during your job interview.
 ## Table of Contents
 
 1. [Requirements](#requirements)
-1. [Installation Instructions](#installation_instructions)
+1. [Installation Instructions](#Installation_Instructions)
 1. [Writing Your Solution] (#writing_your_solution)
 1. [Testing Your Code] (#testing_your_code)
 1. [Contributing](#contributing)
