@@ -11,9 +11,9 @@ during your job interview.
 ## Table of Contents
 
 1. [Requirements](#requirements)
-1. [Installation Instructions](#installation_instructions)
-1. [Writing Your Solution] (#writing_your_solution)
-1. [Testing Your Code] (#testing_your_code)
+1. [Installation Instructions](#installation)
+1. [Writing Your Solution] (#coding)
+1. [Testing Your Code] (#testing)
 1. [Contributing](#contributing)
 
 
@@ -23,7 +23,7 @@ during your job interview.
 - Sinon
 
 
-## Installation Instructions
+## Installation
 ````bash
 [~]                 $ git clone https://github.com/codeprep/coding_challenges
 [~]                 $ cd coding_challenges
@@ -34,12 +34,12 @@ during your job interview.
 ```
 
 
-## Writing Your Solution
+## Coding
 Each folder will have a file with instructions. Open this file in your favorite editor. Read the directions.
 Add your code in the function. DO NOT rename the file or the function in the file.
 
 
-## Testing Your Code
+## Testing
 Once you have finished writing your code, enter npm test at the command line. You must be in the folder that you are
 testing your code.  
 
