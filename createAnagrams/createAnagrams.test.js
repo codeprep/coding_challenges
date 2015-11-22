@@ -1,15 +1,9 @@
 var should = require('should');
 var vm = require('vm');
 var fs = require('fs');
+var filename = __filename.replace(/\.test\.js$/, '.js');
+vm.runInThisContext(fs.readFileSync(filename), filename);
 
-// if this test is being run on a server it should be ONLY to test the
-// provided solutions
-if(typeof window === 'undefined'){
-  // looks for a file with the same name as this one but with
-  // `.test.js` replaced with `.js`
-  var filename = __filename.replace(/\.test\.js$/, '.js');
-  vm.runInThisContext(fs.readFileSync(filename), filename);
-}
 
 describe('createAnagrams', function() {
   it('should exist', function(){
@@ -22,6 +16,7 @@ describe('createAnagrams', function() {
 
   it('should return an array', function() {
     var result = createAnagrams('hello');
+    console.log('result', result);
     should.exist(result);
     result.should.be.an.instanceof(Array);
   });
@@ -79,8 +74,6 @@ describe('createAnagrams', function() {
   });
 
   it('should return all __unique__ anagrams for \'apps\'', function() {
-    // if you've gotten this far, you're doing awesome. this last test
-    // is to check if you're returning an anagram array without duplicates
     var expected = [ 'apps', 'apsp', 'aspp', 'paps', 'pasp', 'ppas', 'ppsa'
       , 'psap', 'pspa', 'sapp', 'spap', 'sppa' ];
     var match = true;
@@ -89,10 +82,6 @@ describe('createAnagrams', function() {
   });
 
   it('should not use underscore\'s `uniq`', function(){
-    // this just checks your code for any usage of `_.uniq`
-    // NOTE: this test _might_ still fail even if you technically don't use
-    // `_.uniq` (ie., if you hae commented out code that still references
-    // `_.uniq` in your solution.)
     var usesUniq = createAnagrams.toString().match(/\s*_\.uniq/) === null;
     usesUniq.should.be.true;
   })

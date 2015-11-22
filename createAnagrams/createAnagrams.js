@@ -24,13 +24,6 @@
  *                                                             *
  **************************************************************/
 
-
-/**
-  * example usage:
-  * var anagrams = createAnagrams('abc');
-  * console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-  */
-
 var createAnagrams = function(string) {
   /* YOUR CODE GOES HERE */
 
