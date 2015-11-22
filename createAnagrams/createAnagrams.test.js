@@ -16,7 +16,6 @@ describe('createAnagrams', function() {
 
   it('should return an array', function() {
     var result = createAnagrams('hello');
-    console.log('result', result);
     should.exist(result);
     result.should.be.an.instanceof(Array);
   });
@@ -26,16 +25,16 @@ describe('createAnagrams', function() {
     result.should.be.eql(['a']);
   });
 
-  it('should return an array of anagrams that contains `lives` for input `elvis`', function(){
-    var result = createAnagrams('elvis');
-    var found = result.indexOf('lives') !== -1;
+  it('should return an array of anagrams that contains `nat` for input `ant`', function(){
+    var result = createAnagrams('ant');
+    var found = result.indexOf('nat') !== -1;
     found.should.be.true;
   });
 
-  it('should return an array of anagrams that contains `badcredit` for input `debitcard`', function(){
-    var result = createAnagrams('debitcard');
-    var found = result.indexOf('badcredit') !== -1;
-    found.should.be.true;
+  it('should return a single entry in array if input is same characters', function() {
+    var expected = ['aaa'];
+    var result = createAnagrams('aaa');
+    result.length.should.be.equal(expected.length);
   });
 
   it('should return all anagrams for \'ab\'', function(){
@@ -49,10 +48,9 @@ describe('createAnagrams', function() {
     }
   });
 
-  it('should return all anagrams for \'abc\'', function(){
-    var expected = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba'];
-    var result = createAnagrams('abc');
-    result.sort().should.be.eql(expected);
+  it('should return all anagrams for \'jtb\'', function(){
+    var expected = ['jtb', 'jbt', 'tjb', 'tbj', 'bjt', 'btj'];
+    var result = createAnagrams('jtb');
     var item, found = false;
     for(var i = 0; i < expected.length; i++){
       item = expected[i];
@@ -61,19 +59,7 @@ describe('createAnagrams', function() {
     }
   });
 
-  it('should return all anagrams for \'apps\'', function() {
-    var expected = [ 'apps', 'apsp', 'aspp', 'paps', 'pasp', 'ppas'
-      , 'ppsa', 'psap', 'pspa', 'sapp', 'spap', 'sppa' ];
-    var result = createAnagrams('apps');
-    var item, index, found = false;
-    for(var i = 0; i < expected.length; i++){
-      item = expected[i];
-      found = result.indexOf(item) !== -1;
-      found.should.be.true;
-    }
-  });
-
-  it('should return all __unique__ anagrams for \'apps\'', function() {
+  it('should return only unique anagrams for \'apps\'', function() {
     var expected = [ 'apps', 'apsp', 'aspp', 'paps', 'pasp', 'ppas', 'ppsa'
       , 'psap', 'pspa', 'sapp', 'spap', 'sppa' ];
     var match = true;
@@ -81,8 +67,4 @@ describe('createAnagrams', function() {
     result.length.should.be.equal(expected.length);
   });
 
-  it('should not use underscore\'s `uniq`', function(){
-    var usesUniq = createAnagrams.toString().match(/\s*_\.uniq/) === null;
-    usesUniq.should.be.true;
-  })
 });
